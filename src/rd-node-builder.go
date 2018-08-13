@@ -43,6 +43,11 @@ func ReadHostFile(filename string) *foreman.ForemanHost {
 func main() {
 	var hostDataFilename = fmt.Sprintf("%s/host.json", os.Getenv("HOME"))
 	fhost := ReadHostFile(hostDataFilename)
+	// Choose a formatter:
+	out := &formatters.NodeXmlFormatter{
+		HostData: fhost,
+	}
+	fmt.Printf("%v\n",out)
 	// Print the host data:
 	fmt.Printf("%v\n", fhost)
 }

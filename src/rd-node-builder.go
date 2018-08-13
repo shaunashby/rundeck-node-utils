@@ -18,6 +18,7 @@ import "encoding/json"
 import "os"
 import "io/ioutil"
 import "foreman"
+import "rundeck/formatters"
 
 // ReadHostFile reads the JSON input stream and returns
 // a ForemanHost instance containing the unmarshalled

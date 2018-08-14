@@ -47,7 +47,6 @@ func main() {
 	out := &formatters.NodeXmlFormatter{
 		HostData: fresponse.GetHosts(),
 	}
+	// Print the formatted node data for Rundeck:
 	fmt.Printf("%v\n",out)
-	// Print the host data:
-	fmt.Printf("%v\n", fhost)
 }

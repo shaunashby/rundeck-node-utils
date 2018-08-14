@@ -23,7 +23,7 @@ import "rundeck/formatters"
 // ReadHostFile reads the JSON input stream and returns
 // a ForemanHost instance containing the unmarshalled
 // JSON data:
-func ReadHostFile(filename string) *foreman.ForemanHost {
+func ReadHostFile(filename string) *foreman.ForemanApiResponse {
 
 	// Open the host file and read in the JSON stream:
 	hfileBytes, err := ioutil.ReadFile(filename)
@@ -31,21 +31,21 @@ func ReadHostFile(filename string) *foreman.ForemanHost {
 		panic(fmt.Sprintf("Error reading from file %s: %s\n", filename, err))
 	}
 
-	fhost := foreman.ForemanHost{}
+	fresp := foreman.ForemanApiResponse{}
 
-	if err := json.Unmarshal(hfileBytes, &fhost); err != nil {
+	if err := json.Unmarshal(hfileBytes, &fresp); err != nil {
 		panic(fmt.Sprintf("Error unmarshalling from file: %s\n", err))
 	}
 
-	return &fhost
+	return &fresp
 }
 
 func main() {
-	var hostDataFilename = fmt.Sprintf("%s/host.json", os.Getenv("HOME"))
-	fhost := ReadHostFile(hostDataFilename)
+	var hostDataFilename = fmt.Sprintf("%s/hosts.json", os.Getenv("HOME"))
+	fresponse := ReadHostFile(hostDataFilename)
 	// Choose a formatter:
 	out := &formatters.NodeXmlFormatter{
-		HostData: fhost,
+		HostData: fresponse.GetHosts(),
 	}
 	fmt.Printf("%v\n",out)
 	// Print the host data:

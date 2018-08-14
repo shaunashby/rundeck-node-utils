@@ -17,6 +17,14 @@ import "fmt"
 //     "puppet_proxy_name": "inf-cf-01.dfinet.ch",
 // }
 //
+type ForemanApiResponse struct {
+	ForemanHosts []ForemanHost `json:"results"`
+}
+
+func (r *ForemanApiResponse) GetHosts() []ForemanHost {
+	return r.ForemanHosts
+}
+
 type ForemanHost struct {
 	ForemanHostArch            string `json:"architecture_name"`
 	ForemanHostName            string `json:"name"`

@@ -35,7 +35,7 @@ type ForemanHost struct {
 	ForemanHostIpAddress       string `json:"ip"`
 	ForemanHostMacAddress      string `json:"mac"`
 	ForemanHostOs              string `json:"operatingsystem_name"`
-	ForemanHostPuppetMaster    string `json:"puppet_proxy_name"`
+	ForemanHostPuppetmaster    string `json:"puppet_proxy_name"`
 }
 
 // Functions for ForemanHost type:
@@ -49,6 +49,22 @@ func (fh *ForemanHost) Name() string {
 
 func (fh *ForemanHost) Certname() string {
 	return fh.ForemanHostCertname
+}
+
+func (fh *ForemanHost) Comment() string {
+	return fh.ForemanHostComment
+}
+
+func (fh *ForemanHost) Hostgroup() string {
+	return fh.ForemanHostMemberHostgroup
+}
+
+func (fh *ForemanHost) IpAddress() string {
+	return fh.ForemanHostIpAddress
+}
+
+func (fh *ForemanHost) Puppetmaster() string {
+	return fh.ForemanHostPuppetmaster
 }
 
 // Customize formatting for stdout:

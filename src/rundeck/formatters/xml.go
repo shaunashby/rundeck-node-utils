@@ -30,7 +30,7 @@ func (f *NodeXmlFormatter) String() string {
 		// TODO: add tags derived from Foreman metadata:
 		// tags: x,y,z
 	}
-	fmt.Fprintf(&nodeStringBuffer,"</project>\n")
+	fmt.Fprintf(&nodeStringBuffer,"</project>")
 
 	return nodeStringBuffer.String()
 }

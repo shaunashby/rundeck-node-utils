@@ -2,21 +2,7 @@ package foreman
 
 import "fmt"
 
-// Type to hold the host information from parsed JSON
-//
-// {
-//     "architecture_name": "i386",
-//     "certname": "zmproxy1.dfinet.ch",
-//     "comment": null,
-//     "hostgroup_name": "zimbraserver",
-//     "id": 49,
-//     "ip": "195.70.10.142",
-//     "mac": "7a:17:19:bd:dc:b4",
-//     "name": "zmproxy1.dfinet.ch",
-//     "operatingsystem_name": "CentOS 5.11",
-//     "puppet_proxy_name": "inf-cf-01.dfinet.ch",
-// }
-//
+// Type to store the bytes from a Foreman API response:
 type ForemanApiResponse struct {
 	ForemanHosts []ForemanHost `json:"results"`
 }

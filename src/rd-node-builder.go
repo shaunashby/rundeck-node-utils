@@ -40,12 +40,30 @@ func ReadHostFile(filename string) *foreman.ForemanApiResponse {
 	return &fresp
 }
 
+func MapPuppetZoneToMaster(puppetZone string) string {
+	var puppetmaster string
+	switch puppetZone {
+	case "office":
+		puppetmaster = "off-cf-01.dfinet.ch"
+	case "infra":
+		puppetmaster = "inf-cf-01.dfinet.ch"
+	case "clients":
+		puppetmaster =  "inf-cf-02.dfinet.ch"
+	}
+	return puppetmaster
+}
+
 func main() {
-	var hostDataFilename = fmt.Sprintf("%s/hosts.json", os.Getenv("HOME"))
+	// Set the zone (office/infra/clients):
+	puppetZone := "infra"
+	var hostDataFilename = fmt.Sprintf("%s/%s.json", os.Getenv("HOME"), puppetZone)
+
 	fresponse := ReadHostFile(hostDataFilename)
+
 	// Choose a formatter:
 	out := &formatters.NodeXmlFormatter{
 		HostData: fresponse.GetHosts(),
+		PuppetZone: MapPuppetZoneToMaster(puppetZone),
 	}
 	// Print the formatted node data for Rundeck:
 	fmt.Printf("%v\n",out)

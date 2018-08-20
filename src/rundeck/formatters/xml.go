@@ -6,6 +6,7 @@ import "bytes"
 
 type NodeXmlFormatter struct {
 	HostData []foreman.ForemanHost
+	PuppetZone string
 }
 
 // Output node to XML format using a template (eventually):
@@ -24,7 +25,7 @@ func (f *NodeXmlFormatter) String() string {
 		fmt.Fprintf(&nodeStringBuffer,"         hostname=\"%s\"\n", host.IpAddress())
 		fmt.Fprintf(&nodeStringBuffer,"         description=\"%s\"\n", host.Comment())
 		fmt.Fprintf(&nodeStringBuffer,"         osArch=\"%s\"\n", host.Arch())
-		fmt.Fprintf(&nodeStringBuffer,"         puppetmaster=\"%s\"\n", host.Puppetmaster())
+		fmt.Fprintf(&nodeStringBuffer,"         puppetmaster=\"%s\"\n", f.PuppetZone )
 		fmt.Fprintf(&nodeStringBuffer,"         hostgroup=\"%s\"\n", host.Hostgroup())
 		fmt.Fprintf(&nodeStringBuffer,"         username=\"%s\" />\n", defUser)
 		// TODO: add tags derived from Foreman metadata:

@@ -1,16 +1,3 @@
-//____________________________________________________________________
-// File: ini.go
-//____________________________________________________________________
-//
-// Author: Shaun Ashby <shaun@ashby.ch>
-// Created: 2018-08-20 11:21:53+0200
-// Revision: $Id$
-// Description: Formatter compatible with Ansible hosts file
-//
-// Copyright (C) 2018 Shaun Ashby
-//
-//
-//--------------------------------------------------------------------
 package formatters
 
 import "fmt"

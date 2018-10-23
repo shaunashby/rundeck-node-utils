@@ -17,8 +17,8 @@ import "fmt"
 import "encoding/json"
 import "os"
 import "io/ioutil"
-import "foreman"
-import "ansible/formatters"
+import "github.com/shaunashby/rundeck-node-utils/foreman"
+import "github.com/shaunashby/rundeck-node-utils/ansible/formatters"
 
 // ReadHostFile reads the JSON input stream and returns
 // a ForemanHost instance containing the unmarshalled

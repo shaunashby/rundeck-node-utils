@@ -14,7 +14,7 @@
 package formatters
 
 import "fmt"
-import "foreman"
+import "github.com/shaunashby/rundeck-node-utils/foreman"
 import "bytes"
 
 type NodeIniFormatter struct {

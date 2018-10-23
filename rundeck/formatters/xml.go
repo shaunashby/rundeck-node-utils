@@ -4,13 +4,14 @@ import "fmt"
 import "foreman"
 import "bytes"
 
-type NodeXmlFormatter struct {
-	HostData []foreman.ForemanHost
+// NodeXMLFormatter is a type to contain the data for a Foreman host entry
+type NodeXMLFormatter struct {
+	HostData   []foreman.ForemanHost
 	PuppetZone string
 }
 
 // Output node to XML format using a template (eventually):
-func (f *NodeXmlFormatter) String() string {
+func (f *NodeXMLFormatter) String() string {
 	defType := "Node"
 	defUser := "rundeck"
 

@@ -62,8 +62,8 @@ func main() {
 	fresponse := ReadHostFile(hostDataFilename)
 
 	// Choose a formatter:
-	out := &formatters.NodeXmlFormatter{
-		HostData: fresponse.GetHosts(),
+	out := &formatters.NodeXMLFormatter{
+		HostData:   fresponse.GetHosts(),
 		PuppetZone: MapPuppetZoneToMaster(puppetZone),
 	}
 	// Print the formatted node data for Rundeck:

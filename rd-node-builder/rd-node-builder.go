@@ -49,7 +49,7 @@ func MapPuppetZoneToMaster(puppetZone string) string {
 	case "infra":
 		puppetmaster = "inf-cf-01.dfinet.ch"
 	case "clients":
-		puppetmaster =  "inf-cf-02.dfinet.ch"
+		puppetmaster = "inf-cf-02.dfinet.ch"
 	}
 	return puppetmaster
 }
@@ -67,5 +67,5 @@ func main() {
 		PuppetZone: MapPuppetZoneToMaster(puppetZone),
 	}
 	// Print the formatted node data for Rundeck:
-	fmt.Printf("%v\n",out)
+	fmt.Printf("%v\n", out)
 }

@@ -49,9 +49,9 @@ func main() {
 
 	// Choose a formatter:
 	out := &formatters.NodeIniFormatter{
-		HostData: fresponse.GetHosts(),
+		HostData:   fresponse.GetHosts(),
 		PuppetZone: puppetZone,
 	}
 	// Print the formatted node data for Rundeck:
-	fmt.Printf("%v\n",out)
+	fmt.Printf("%v\n", out)
 }

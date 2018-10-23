@@ -1,7 +1,7 @@
 package formatters
 
 import "fmt"
-import "foreman"
+import "github.com/shaunashby/rundeck-node-utils/foreman"
 import "bytes"
 
 // NodeXMLFormatter is a type to contain the data for a Foreman host entry

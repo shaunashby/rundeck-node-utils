@@ -2,7 +2,7 @@ package foreman
 
 import "fmt"
 
-// Type to store the bytes from a Foreman API response:
+// ForemanApiResponse is a type to store the bytes from a Foreman API response:
 type ForemanApiResponse struct {
 	ForemanHosts []ForemanHost `json:"results"`
 }

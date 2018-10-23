@@ -40,6 +40,7 @@ func ReadHostFile(filename string) *foreman.ForemanApiResponse {
 	return &fresp
 }
 
+// MapPuppetZoneToMaster is a function to convert the Puppet zone into a server name
 func MapPuppetZoneToMaster(puppetZone string) string {
 	var puppetmaster string
 	switch puppetZone {

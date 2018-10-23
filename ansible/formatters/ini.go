@@ -4,6 +4,7 @@ import "fmt"
 import "github.com/shaunashby/rundeck-node-utils/foreman"
 import "bytes"
 
+// NodeIniFormatter is a type to contain the data for a Foreman host entry
 type NodeIniFormatter struct {
 	HostData []foreman.ForemanHost
 	PuppetZone string
